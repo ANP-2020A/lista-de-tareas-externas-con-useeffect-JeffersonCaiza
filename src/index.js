@@ -4,25 +4,12 @@ import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-const users = [
-    {
-        firstName: "Eduardo",
-        lastName: "Caiza"
-    },
-    {
-        firstName: "Aracely",
-        lastName: "Caiza"
-    },
-    {
-        firstName: "Jefferson",
-        lastName: "Caiza"
-    }
-]
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App users={users}/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
