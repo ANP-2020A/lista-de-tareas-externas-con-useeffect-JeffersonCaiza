@@ -23,7 +23,7 @@ const UserList = () => {
     const [ users, setUsers ] = React.useState( initialUsers );
 
     const handleAddUser = () => {
-        const firstname = document.querySelector( '#name' ).value;
+        const firstname = document.querySelector( '#firstname' ).value;
         const lastname = document.querySelector( '#lastname' ).value;
         const newUser = {
             firstname,
