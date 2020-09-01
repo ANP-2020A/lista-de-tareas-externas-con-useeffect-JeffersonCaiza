@@ -62,12 +62,14 @@ const TodoList = () => {
     };
 
     const handleCompleteTask = ( index ) => {
-        setCompleted( ( prevState ) => [
-            ...prevState,
-            todos[ index ]
-        ] );
 
-        handleDeleteTask( index );
+        const taskInfoUpdate=[...taskInfo];
+
+        taskInfoUpdate[index].completed=true;
+
+        setTaskInfo(taskInfoUpdate);
+
+
     };
 
 
@@ -130,24 +132,12 @@ const TodoList = () => {
                                             <td>{ taskInfo.title }</td>
                                             <td>
                                                 {
-                                                    taskInfo.completed
-                                                        ? <button id="complete" className={
-                                                            darkMode
-                                                                ?''
-                                                                :'dark-mode'} onClick={ () => setDarkMode( (prevDarkMode ) => !prevDarkMode )}>
-                                                            {
-                                                                taskInfo.completed
-                                                                    ? ' Completada'
-                                                                    : ' Marcar como completada'
-                                                            }
-                                                        </button>
-                                                        : <button id="incomplete" >
-                                                            {
-                                                                taskInfo.completed
-                                                                    ? ' Completada'
-                                                                    : ' Marcar como completada'
-                                                            }
-                                                        </button>
+                                                   taskInfo.completed
+                                                    ? <span className="completed">Completada</span>
+                                                       :<button className="incomplete" onClick={()=>handleCompleteTask(index)}>
+                                                       Marcar como completada
+                                                       </button>
+
                                                 }
                                             </td>
                                             <td>
